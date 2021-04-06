@@ -1,0 +1,11 @@
+{
+  "name": "@sewan/foundation",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "workspaces": [
+    "./packages/*"
+  ],
+  "author": "we@thetribe.io",
+  "license": "ISC"
+}
