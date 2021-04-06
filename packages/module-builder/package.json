@@ -1,23 +1,16 @@
 {
   "name": "@sewan/module-builder",
   "version": "1.0.0",
-  "bin": {"custom-webpack": "webpack.js"},
-  "babel": {
-    "presets": [
-      "@babel/preset-env",
-      "@babel/preset-react"
-    ]
+  "bin": {
+    "custom-webpack": "webpack.js"
   },
   "dependencies": {
     "@babel/core": "^7.13.14",
     "@babel/preset-react": "^7.13.13",
+    "@babel/plugin-transform-runtime": "^7.13.10",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
     "babel-loader": "^8.2.2",
-    "bundle-loader": "^0.5.6",
-    "html-webpack-plugin": "^5.3.1",
-    "serve": "^11.3.2",
-    "source-map-loader": "^2.0.1",
     "webpack": "^5.30.0",
-    "webpack-cli": "^4.6.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-cli": "^4.6.0"
   }
 }

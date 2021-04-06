@@ -1,13 +1,22 @@
 const path = require('path');
 
+// Retrieve env variables
+const NODE_ENV = process.env.NODE_ENV || "development";
+
+// Get package.json content
+const cwd = process.cwd();
+const pkg = require(path.resolve(cwd, "package.json"));
+
+// Output file
+const modulePath = path.resolve(cwd, pkg.module || `index.js`);
+const filename = modulePath.replace(/^.*[\\\/]/, '')
+
 module.exports = {
-    mode: 'development',
-    entry: './src/index.js',
+    mode: NODE_ENV,
     output: {
-        path: path.resolve('lib'),
-        filename: 'foundation-core.js',
+        path: path.resolve('dist'),
+        filename: filename,
         library: {
-            name: 'foundation',
             type: 'umd'
         }
     },

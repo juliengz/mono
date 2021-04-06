@@ -23,10 +23,10 @@ if (argv.help) {
 const inputFile = argv._[0]
 
 async function webpack() {
-    const configAbsPath = resolve(__dirname, './rollup.config.js')
+    const configAbsPath = resolve(__dirname, './webpack.config.js')
 
     return new Promise((resolve, reject) => {
-        const args = ['rollup']
+        const args = ['webpack']
 
         args.push('-c', argv.c || configAbsPath)
         if (argv.watch) args.push('--watch')
@@ -35,7 +35,7 @@ async function webpack() {
         const cra = spawn('npx', args, { stdio: 'inherit' })
         cra.on('exit', code => {
             if (code !== 0) {
-                reject(new Error('Rollup failed'))
+                reject(new Error('Webpack failed'))
             }
 
             resolve()
@@ -44,8 +44,8 @@ async function webpack() {
 }
 
 async function main() {
-    await rollup()
-    console.log(`🙌 rollup done.`)
+    await webpack()
+    console.log(`🙌 webpack done.`)
 }
 main().catch(err => {
     console.error(err)

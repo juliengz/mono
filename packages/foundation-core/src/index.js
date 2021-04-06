@@ -6,7 +6,7 @@ import {Routes, Route} from 'react-router-dom'
 export default function FoundationCore({children}) {
     return (
         <BrowserRouter>
-            <h1>FOUNDATION</h1>
+            <h1>FOUNDATIONS</h1>
             {children}
         </BrowserRouter>
     )
